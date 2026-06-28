@@ -1,0 +1,21 @@
+{
+  "name": "mamabora",
+  "version": "1.0.0",
+  "description": "Pediatric AI assistant for parents and caregivers. Provides symptom triage, developmental milestone guidance, and vaccination schedule education with strict safety guardrails.",
+  "category": "healthcare",
+  "keywords": ["pediatrics", "children", "parenting", "mamabora", "health", "milestones", "vaccines"],
+  "commands": [
+    { "name": "triage",           "path": "commands/triage.md" },
+    { "name": "milestones",       "path": "commands/milestones.md" },
+    { "name": "vaccine-schedule", "path": "commands/vaccine-schedule.md" }
+  ],
+  "agents": [
+    { "name": "pediatric-advisor", "path": "agents/pediatric-advisor.md" }
+  ],
+  "skills": [
+    { "name": "pediatric-safety",    "path": "skills/pediatric-safety/" },
+    { "name": "symptom-assessment",  "path": "skills/symptom-assessment/" },
+    { "name": "child-development",   "path": "skills/child-development/" }
+  ],
+  "disclaimer": "Mamabora provides general health education only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical decisions."
+}
