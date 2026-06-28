@@ -2,18 +2,30 @@
 
 Steps to publish Mamabora to the [xAI plugin marketplace](https://github.com/xai-org/plugin-marketplace).
 
-## 1. Push this repo to GitHub
+## 1. GitHub repo
 
-Create a public repository (e.g. `YOUR_ORG/mamabora-plugin`) and push:
+This plugin is published at:
+
+```text
+https://github.com/Iammcqwory/mamabora-plugin
+```
+
+Remote and push commands for this workspace:
 
 ```bash
-git remote add origin https://github.com/YOUR_ORG/mamabora-plugin.git
-git push -u origin main
+git remote add origin https://github.com/Iammcqwory/mamabora-plugin.git
+git push -u origin master
 ```
 
 ## 2. Pin the commit SHA
 
-Every remote marketplace entry requires a full 40-character lowercase SHA:
+Current pinned commit:
+
+```text
+f0fa2154c17ea801400ab008e2b17801e26107ec
+```
+
+Refresh it after any new plugin commit:
 
 ```bash
 git rev-parse HEAD
@@ -22,26 +34,26 @@ git rev-parse HEAD
 Or from any machine:
 
 ```bash
-git ls-remote https://github.com/YOUR_ORG/mamabora-plugin.git HEAD
+git ls-remote https://github.com/Iammcqwory/mamabora-plugin.git HEAD
 ```
 
 ## 3. Fork and edit the marketplace catalog
 
 1. Fork [xai-org/plugin-marketplace](https://github.com/xai-org/plugin-marketplace)
 2. Append this entry to `.grok-plugin/marketplace.json` inside the `plugins` array
-3. Replace `YOUR_ORG` and `YOUR_COMMIT_SHA` with real values
+3. Run the catalog validator before opening the PR
 
 ```json
 {
   "name": "mamabora",
-  "description": "Pediatric AI assistant for parents and caregivers. Symptom triage with emergency escalation, developmental milestone guidance, vaccination schedules (including KEPI), and Kenya-localised emergency contacts — with strict safety guardrails.",
+  "description": "Pediatric AI assistant for parents and caregivers. Symptom triage with emergency escalation, developmental milestone guidance, vaccination schedules (including KEPI), and Kenya-localised emergency contacts - with strict safety guardrails.",
   "category": "healthcare",
   "source": {
     "source": "url",
-    "url": "https://github.com/YOUR_ORG/mamabora-plugin.git",
-    "sha": "YOUR_COMMIT_SHA"
+    "url": "https://github.com/Iammcqwory/mamabora-plugin.git",
+    "sha": "f0fa2154c17ea801400ab008e2b17801e26107ec"
   },
-  "homepage": "https://github.com/YOUR_ORG/mamabora-plugin",
+  "homepage": "https://github.com/Iammcqwory/mamabora-plugin",
   "keywords": [
     "mamabora",
     "pediatrics",
@@ -61,7 +73,7 @@ git ls-remote https://github.com/YOUR_ORG/mamabora-plugin.git HEAD
 
 ## 4. Validate locally
 
-Clone the marketplace fork and run the catalog validator:
+Clone your marketplace fork and run:
 
 ```bash
 python3 scripts/validate-catalog.py
@@ -78,15 +90,19 @@ python3 scripts/validate-catalog.py
 When you release a new version:
 
 1. Push changes to your plugin repo
-2. Update the `sha` field in your marketplace PR (or a follow-up PR)
+2. Update the `sha` field in your marketplace PR or follow-up PR
 3. Optionally bump `version` in both `plugin.json` and the catalog entry
 
-## Local install (before marketplace approval)
+## Local install before marketplace approval
 
 Point Grok Build at this directory:
 
-```
-e:\iammcqwory\Bora\Mamabora\Mamabora - Pediatric AI Assistant
+```text
+E:\iammcqwory\Bora\Mamabora\mamabora-plugin
 ```
 
-Or install from your GitHub URL once pushed.
+Or install from your GitHub URL:
+
+```text
+https://github.com/Iammcqwory/mamabora-plugin.git
+```
